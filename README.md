@@ -144,7 +144,12 @@ The GUI displays:
 
 Testing
 
-While testing my binary search visualizer, I noticed that very large or very small input values caused the bars to grow outside the display area. This happened because the bar height was directly tied to the number’s value. To prevent the layout from breaking, I limited the bar heights to a fixed range so they always fit within the output box.
+- During testing, the input validation of the app effectively handled any invalid characters, such as letters, symbols, or punctuation, entered into the list or target fields. When users typed such characters, the app immediately displayed a clear error message instructing them to enter integers only, preventing any unexpected behavior or crashes. Additionally, clicking buttons out of the normal logical sequence—such as pressing “Next Step” before initializing the search—did not disrupt the flow of the application. Instead, the app gracefully maintained its current state and displayed an appropriate message to guide the user, ensuring predictable behavior under all user interactions.
+
+- While testing, I also observed that extremely large or very small input values caused the bars to extend beyond the display area, since the bar heights were directly proportional to the numbers’ values. To prevent the layout from breaking, I implemented a height clamping mechanism that limits each bar to a fixed range. This ensures that all bars remain fully visible and properly scaled within the output box, maintaining a clear and consistent visual representation regardless of the input values.
+
+
+
 
 
 Steps to Run
@@ -161,6 +166,7 @@ Author and Acknowledgment
 This project was created by Nicolas Lin to visually demonstrate how the Binary Search algorithm works. All Python logic, including the search steps, pointer movement, and state tracking was written and implemented by the author.
 
 The visual GUI elements, such as the arrows and bar displays shown in Gradio, were created with assistance from ChatGPT, which helped design the HTML/CSS formatting used in the interface.
+
 
 
 
