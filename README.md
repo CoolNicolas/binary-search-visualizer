@@ -23,70 +23,74 @@ I chose Binary Search because it is an efficient searching algorithm built on a 
 Decomposition
 
 Input Handling
-The program first needs to read the user’s text input, validate it, and convert it into a list of integers. It must also confirm the target value is a valid integer.
+
+- The program first needs to read the user’s text input, validate it, and convert it into a list of integers. It must also confirm the target value is a valid integer.
 
 Sorting + Binary Search Logic
-The list is sorted, and the binary search algorithm is executed step by step. This includes updating the left pointer, right pointer, middle index, and determining whether the target has been found.
+
+- The list is sorted, and the binary search algorithm is executed step by step. This includes updating the left pointer, right pointer, middle index, and determining whether the target has been found.
 
 State Tracking
-The program stores the current search state (left, right, mid, result) so each click of the “Next Step” button can continue the algorithm.
+
+- The program stores the current search state (left, right, mid, result) so each click of the “Next Step” button can continue the algorithm.
 
 Visualization Rendering
-A separate component generates colored bar graphs representing the list.
 
-The mid index is highlighted in red.
+- A separate component generates colored bar graphs representing the list.
 
-The searched zones are colored gray.
+- The mid index is highlighted in red.
 
-If the target is found, that bar turns green.
+- The searched zones are colored gray.
+
+- If the target is found, that bar turns green.
 
 GUI Management
 The interface handles:
 
-starting the search
+- starting the search
 
-stepping through the algorithm
+- stepping through the algorithm
 
-resetting the visualization
+- resetting the visualization
 
-updating messages that explain what each step is doing
+- updating messages that explain what each step is doing
 
 
 
 Pattern Recognition
 
 
-Each step compares the target to the middle element and then eliminates either the left half or the right half of the list. 
+- Each step compares the target to the middle element and then eliminates either the left half or the right half of the list. 
 
-The left and right boundaries move inward using the same logic every iteration. After every update, the midpoint is computed again with the same formula: mid=(L+R)/2
+- The left and right boundaries move inward using the same logic every iteration. After every update, the midpoint is computed again with the same formula: mid=(L+R)/2
 
-The pattern continues until either the target is found or the search space becomes empty.
+- The pattern continues until either the target is found or the search space becomes empty.
 
-For the visualization, these patterns repeat as well, each step displays a new mid index, updates colors, and narrows the search range.
+- For the visualization, these patterns repeat as well, each step displays a new mid index, updates colors, and narrows the search range.
 
 Abstraction
 
 The key components that need to be shown for users to understand the logic of the algorithm are: 
 
-The sorted list
+- The sorted list
 
-The current search boundaries (left and right)
+- The current search boundaries (left and right)
 
-The middle element being inspected
+- The middle element being inspected
 
-Whether the target is found (eliminate half of the list when the target is not found while running binary search)
+- Whether the target is found (eliminate half of the list when the target is not found while running binary search)
 
 The visualization hides unnecessary technical details such as:
 
-How Gradio internally stores the state
+- How Gradio internally stores the state
 
-Python recursion or loops
+- Python recursion or loops
 
-HTML/CSS specifics
+- HTML/CSS specifics
 
-Parsing logic (validate input)
+- Parsing logic (validate input)
 
-Error-handling
+- Error-handling
 
 
 
@@ -95,47 +99,46 @@ Algorithm Design
 
 
 Input
-The user enters a space separated list of integers and a target number in the Gradio interface.
+- The user enters a space separated list of integers and a target number in the Gradio interface.
 
-This list of integers would represent different rectangular bars(the width of each bar is constant, but the height of each bar is set from the input). 
+- This list of integers would represent different rectangular bars(the width of each bar is constant, but the height of each bar is set from the input). 
 
 Initialization
 
-The list is validated, converted to integers, and sorted.
+- The list is validated, converted to integers, and sorted.
 
-The left and right pointers are set.
+- The left and right pointers are set.
 
-The initial mid index is computed.
+- The initial mid index is computed.
 
-A starting visualization is generated.
+- A starting visualization is generated.
 
 Step-by-Step Execution
-Each time the user clicks Next Step:
+- Each time the user clicks Next Step:
 
-The program compares the middle element with the target.
+- The program compares the middle element with the target.
 
-If equal, target found.
+- If equal, target found.
 
-If smaller,  search moves right.
+- If smaller,  search moves right.
 
-If larger,  search moves left.
+- If larger,  search moves left.
 
-The mid index is recomputed.
+- The mid index is recomputed.
 
-The visual representation is updated accordingly.
 
 Output
 The GUI displays:
 
-The bar chart
+- The bar chart
 
-Color coded search progress
+- Color coded search progress
 
-Pointer labels (L, M, R)
+- Pointer labels (L, M, R)
 
-Explanation text describing what happened in that step
+- Explanation text describing what happened in that step
 
-A reset button allows the user to restart with new input at any time.
+- A reset button allows the user to restart with new input at any time.
 
 
 
@@ -158,6 +161,7 @@ Author and Acknowledgment
 This project was created by Nicolas Lin to visually demonstrate how the Binary Search algorithm works. All Python logic, including the search steps, pointer movement, and state tracking was written and implemented by the author.
 
 The visual GUI elements, such as the arrows and bar displays shown in Gradio, were created with assistance from ChatGPT, which helped design the HTML/CSS formatting used in the interface.
+
 
 
 
